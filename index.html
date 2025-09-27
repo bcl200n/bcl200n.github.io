@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chunlin Bian · Portfolio</title>
+  <meta name="description" content="Portfolio of Chunlin Bian — PhD candidate at Tongji University under Prof. Menggang, researching seismic resilience and urban renewal." />
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="./assets/favicon.svg" />
+  <style>
+    :root{
+      --bg:#0b0c10;--panel:#111217;--muted:#bfc7d5;--text:#e8edf7;--brand:#6aa9ff;--brand-2:#7ae1cf;--ring:rgba(106,169,255,.35);--card:#0f1116;--border:rgba(255,255,255,.08);--shadow:0 10px 30px rgba(0,0,0,.35)
+    }
+    @media (prefers-color-scheme: light){
+      :root{--bg:#f7f9fc;--panel:#fff;--muted:#5a6576;--text:#142033;--brand:#1e66ff;--brand-2:#0dbda2;--card:#fff;--border:rgba(20,32,51,.08);--shadow:0 10px 30px rgba(17,24,39,.08)}
+    }
+    body{margin:0;font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
+    .container{width:min(1100px,92%);margin:0 auto}
+    header{position:sticky;top:0;backdrop-filter:blur(8px);background:color-mix(in oklab,var(--bg) 75%,transparent);border-bottom:1px solid var(--border);z-index:99}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .avatar{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);object-fit:cover}
+    .title{font-weight:700}
+    .subtitle{color:var(--muted);font-size:.9rem}
+    .nav-links{display:flex;gap:14px}
+    .nav-links a.active{border-bottom:2px solid var(--brand)}
+    .btn{padding:8px 12px;border-radius:12px;border:1px solid var(--border);background:var(--panel);box-shadow:var(--shadow)}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:36px;padding:48px 0;align-items:center}
+    .hero h1{font-size:clamp(28px,3vw,42px);margin:0 0 10px}
+    .hero p{color:var(--muted);margin:0 0 18px}
+    .badge{padding:6px 10px;border-radius:999px;border:1px solid var(--border);font-size:.85rem;margin-right:8px}
+    .panel{background:var(--card);padding:18px;border-radius:16px;box-shadow:var(--shadow)}
+    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+    .kpi{text-align:center}.kpi strong{display:block;font-size:1.2rem}
+    section{padding:34px 0}
+    .card{padding:16px;border:1px solid var(--border);border-radius:16px;background:var(--card)}
+    .timeline{border-left:2px solid var(--border);padding-left:16px;display:grid;gap:14px}
+    .tl-item{position:relative}
+    .tl-item::before{content:"";position:absolute;left:-10px;top:2px;width:10px;height:10px;border-radius:50%;background:var(--brand)}
+    footer{margin-top:40px;border-top:1px solid var(--border);padding:20px 0;color:var(--muted)}
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:10px;border-bottom:1px solid var(--border);text-align:left}
+    th{background:var(--panel);color:var(--brand)}
+    tr:hover{background:color-mix(in oklab,var(--bg) 92%,white)}
+    .two-col{display:grid;grid-template-columns:2fr 1fr;gap:24px}
+    @media(max-width:960px){.hero{grid-template-columns:1fr}.two-col{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <img class="avatar" src="./assets/avatar.png" alt="Chunlin Bian" />
+        <div>
+          <div class="title">Chunlin Bian</div>
+          <div class="subtitle">PhD Candidate · Seismic Resilience & Urban Renewal</div>
+        </div>
+      </div>
+      <nav class="nav-links" id="top-nav">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#awards">Awards</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero" id="about">
+      <div>
+        <h1>Hi, I'm <span style="color:var(--brand)">Chunlin Bian</span> 👋</h1>
+        <p>I am a <strong>PhD candidate in Architecture at Tongji University</strong>, supervised by <strong>Prof. Menggang</strong>. My research focuses on <strong>seismic resilience</strong> and <strong>urban renewal</strong>, exploring how digital tools, planning, and architectural design can enhance resilience in the built environment.</p>
+        <div>
+          <span class="badge">🎓 PhD Candidate — Tongji University</span>
+          <span class="badge">👨‍🏫 Supervisor: Prof. Menggang</span>
+          <span class="badge">🏫 Lecturer — Xichang University</span>
+        </div>
+        <div style="margin-top:18px">
+          <a class="btn" href="#projects">See Projects</a>
+          <a class="btn" href="./assets/Chunin Bian-CV_Arch325.pdf" target="_blank">Download CV</a>
+        </div>
+      </div>
+      <div class="panel">
+        <img src="./assets/cover.png" alt="cover" style="width:100%;border-radius:12px;" />
+        <div class="kpis">
+          <div class="kpi"><strong>15+</strong><span>years teaching & research</span></div>
+          <div class="kpi"><strong>10+</strong><span>grants & projects</span></div>
+          <div class="kpi"><strong>20+</strong><span>papers & books</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2>Selected Projects</h2>
+      <div class="card">
+        🌍 <strong>InSAR Time-Series for Ground Deformation</strong><br>
+        Sentinel-1A based monitoring of subsidence and uplift in Xichang, supporting early-warning and resilient city planning.
+      </div>
+      <div class="card" style="margin-top:12px">
+        🏛️ <strong>Man–Heritage–Settlements</strong><br>
+        Participatory conservation framework for Yi minority traditional settlements and vernacular buildings in Southwest China.
+      </div>
+      <div class="card" style="margin-top:12px">
+        🌱 <strong>Ecological Security Pattern of Xichang</strong><br>
+        City-scale ecological networks and multi-scale landscape planning strategies toward sustainable urban development.
+      </div>
+    </section>
+
+    <!-- Publications + Awards -->
+    <section id="publications">
+      <h2>Publications & Awards</h2>
+      <div class="two-col">
+        <!-- Publications -->
+        <div class="card">
+          <h3>Publications</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Authors</th>
+                <th>Journal</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Spatial Reproduction of Future Communities: Case of Jiaxing Hongqiao</td>
+                <td>Bian Chunlin, Meng Gang, Zhou Xiangxin</td>
+                <td>Housing Science & Technology</td>
+                <td>Published</td>
+              </tr>
+              <tr>
+                <td>Future Community Spatial Reproduction: Case of Haiyan Haixing</td>
+                <td>Bian Chunlin, Meng Gang, Zhou Xiangxin</td>
+                <td>Housing Science & Technology</td>
+                <td>Accepted, Nov 2025</td>
+              </tr>
+              <tr>
+                <td>Assembled Countryside & Collage City: Practice in Deqing</td>
+                <td>Bian Chunlin, Meng Gang, Zhou Xiangxin</td>
+                <td>Housing Science & Technology</td>
+                <td>Accepted, Dec 2025</td>
+              </tr>
+              <tr>
+                <td>Resilient Healing Landscape Design in Southwest China</td>
+                <td>Bian Chunlin, Meng Gang, Guo Ning</td>
+                <td>Architecture & Culture</td>
+                <td>Accepted, Nov 2025</td>
+              </tr>
+              <tr>
+                <td>Digital Healing Power and the Medical Metaverse</td>
+                <td>Bian Chunlin, Meng Gang</td>
+                <td>Building and Environment</td>
+                <td>Under Review</td>
+              </tr>
+              <tr>
+                <td>AIGC-driven Digital Cultural Heritage: Jianchang Ancient City</td>
+                <td>Bian Chunlin, Meng Gang</td>
+                <td>Architectural Education in China</td>
+                <td>Under Review</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Awards -->
+        <div class="card">
+          <h3>Awards</h3>
+          <ul style="margin:0 0 0 18px">
+            <li>
+              <strong>Young Geographers Award – Best Paper</strong><br>
+              Resilience and Urban Regeneration Policies: Empirical Research from Top-Down and Bottom-Up Strategies — Case Study of Xichang, Liangshan, Sichuan, China<br>
+              <em>15th Korea–China–Japan Joint Conference on Geography, Oct 22, 2023</em>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resume -->
+    <section id="resume">
+      <h2>Experience</h2>
+      <div class="card">
+        <div class="timeline">
+          <div class="tl-item"><small>2016 – Present</small> Lecturer — Xichang University</div>
+          <div class="tl-item"><small>2015 – 2016</small> Director of Urban Design — Urban Management Bureau, Panzhihua</div>
+          <div class="tl-item"><small>2013 – 2015</small> Planner — Zhejiang University Planning Institute</div>
+        </div>
+      </div>
+
+      <h2 style="margin-top:24px">Education</h2>
+      <div class="card">
+        <div class="timeline">
+          <div class="tl-item"><small>Now</small> PhD Candidate, Architecture — Tongji University (Supervisor: Prof. Menggang)</div>
+          <div class="tl-item"><small>2018</small> Visiting Scholar — Massey University, NZ</div>
+          <div class="tl-item"><small>2008 – 2010</small> M.Sc., Landscape Architecture — Peking University</div>
+          <div class="tl-item"><small>2003 – 2007</small> Bachelor, Landscape Architecture — Sichuan Agricultural University</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="card">
+        📞 Phone: +86 18215758251<br>
+        📧 Email: <a href="mailto:chunlinbian@outlook.com">chunlinbian@outlook.com</a><br>
+        🌐 GitHub: <a href="https://github.com/bcl200n" target="_blank">bcl200n</a>
+      </div>
+    </section>
+
+    <footer class="container">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div>© <span id="year"></span> Chunlin Bian. All rights reserved.</div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
