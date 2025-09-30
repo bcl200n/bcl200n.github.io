@@ -1,228 +1,182 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chunlin Bian · Portfolio</title>
-  <meta name="description" content="Portfolio of Chunlin Bian — PhD candidate at Tongji University under Prof. Menggang, researching seismic resilience and urban renewal." />
-  <meta name="color-scheme" content="light dark">
-  <link rel="icon" href="./assets/favicon.svg" />
+  <title>Chunlin Bian — AI for Seismic Resilience & Urban Renewal</title>
+  <meta name="description" content="PhD candidate using foundation models, Earth-observation data, and digital twins to improve seismic resilience and urban renewal. AI-augmented workflows from sensing → understanding → generation → decision." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg:#0b0c10;--panel:#111217;--muted:#bfc7d5;--text:#e8edf7;--brand:#6aa9ff;--brand-2:#7ae1cf;--ring:rgba(106,169,255,.35);--card:#0f1116;--border:rgba(255,255,255,.08);--shadow:0 10px 30px rgba(0,0,0,.35)
+    :root {
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --text: #0f172a; /* slate-900 */
+      --muted: #475569; /* slate-600 */
+      --primary: #2563eb; /* blue-600 */
+      --ring: #c7d2fe;   /* indigo-200 */
     }
-    @media (prefers-color-scheme: light){
-      :root{--bg:#f7f9fc;--panel:#fff;--muted:#5a6576;--text:#142033;--brand:#1e66ff;--brand-2:#0dbda2;--card:#fff;--border:rgba(20,32,51,.08);--shadow:0 10px 30px rgba(17,24,39,.08)}
+    html,body{margin:0;padding:0}
+    body {font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; color: var(--text); background: var(--bg);}
+    .container{max-width:1100px;margin:0 auto;padding:48px 24px}
+    h1{font-size: clamp(36px, 5vw, 56px); line-height:1.15; margin:0 0 10px; font-weight: 800;}
+    h1 .accent{color: var(--primary)}
+    p.lead{font-size: 18px; color: var(--muted); max-width: 900px;}
+    .chips{display:flex; flex-wrap: wrap; gap:10px; margin-top:16px}
+    .chip{font-size: 14px; padding:8px 12px; background:#eef2ff; border-radius:999px}
+    .btns{display:flex; gap:12px; margin-top:24px}
+    .btn{display:inline-block; padding:12px 16px; border-radius:14px; text-decoration:none; font-weight:600; box-shadow:0 1px 2px rgba(0,0,0,.06)}
+    .btn.primary{background: var(--primary); color:#fff}
+    .btn.ghost{background:#fff; color: var(--primary); border:1px solid #dbeafe}
+
+    .stats{margin-top:28px; display:flex; gap:24px; flex-wrap:wrap}
+    .card{background: var(--card); border-radius:20px; padding:24px; box-shadow:0 10px 30px rgba(15,23,42,.08); border:1px solid #e2e8f0}
+    .stats .card{display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:24px; max-width:640px}
+    .stat{text-align:center}
+    .stat .n{font-size:28px; font-weight:800}
+    .stat .k{font-size:13px; color: var(--muted)}
+
+    .section{margin-top:48px}
+    .section h2{font-size:26px; font-weight:700; margin:0 0 8px}
+    .section p{color: var(--muted); max-width:900px}
+
+    .projects{display:grid; grid-template-columns: 1fr; gap:16px; margin-top:18px}
+    @media (min-width: 880px){
+      .hero{display:grid; grid-template-columns: 1.2fr .9fr; gap:28px; align-items:start}
+      .projects{grid-template-columns: repeat(2, 1fr)}
     }
-    body{margin:0;font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
-    a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
-    .container{width:min(1100px,92%);margin:0 auto}
-    header{position:sticky;top:0;backdrop-filter:blur(8px);background:color-mix(in oklab,var(--bg) 75%,transparent);border-bottom:1px solid var(--border);z-index:99}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .brand{display:flex;align-items:center;gap:12px}
-    .avatar{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);object-fit:cover}
-    .title{font-weight:700}
-    .subtitle{color:var(--muted);font-size:.9rem}
-    .nav-links{display:flex;gap:14px}
-    .nav-links a.active{border-bottom:2px solid var(--brand)}
-    .btn{padding:8px 12px;border-radius:12px;border:1px solid var(--border);background:var(--panel);box-shadow:var(--shadow)}
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:36px;padding:48px 0;align-items:center}
-    .hero h1{font-size:clamp(28px,3vw,42px);margin:0 0 10px}
-    .hero p{color:var(--muted);margin:0 0 18px}
-    .badge{padding:6px 10px;border-radius:999px;border:1px solid var(--border);font-size:.85rem;margin-right:8px}
-    .panel{background:var(--card);padding:18px;border-radius:16px;box-shadow:var(--shadow)}
-    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
-    .kpi{text-align:center}.kpi strong{display:block;font-size:1.2rem}
-    section{padding:34px 0}
-    .card{padding:16px;border:1px solid var(--border);border-radius:16px;background:var(--card)}
-    .timeline{border-left:2px solid var(--border);padding-left:16px;display:grid;gap:14px}
-    .tl-item{position:relative}
-    .tl-item::before{content:"";position:absolute;left:-10px;top:2px;width:10px;height:10px;border-radius:50%;background:var(--brand)}
-    footer{margin-top:40px;border-top:1px solid var(--border);padding:20px 0;color:var(--muted)}
-    table{width:100%;border-collapse:collapse}
-    th,td{padding:10px;border-bottom:1px solid var(--border);text-align:left}
-    th{background:var(--panel);color:var(--brand)}
-    tr:hover{background:color-mix(in oklab,var(--bg) 92%,white)}
-    .two-col{display:grid;grid-template-columns:2fr 1fr;gap:24px}
-    @media(max-width:960px){.hero{grid-template-columns:1fr}.two-col{grid-template-columns:1fr}}
+
+    .project{background: var(--card); border:1px solid #e2e8f0; border-radius:16px; padding:18px}
+    .project h3{margin:0 0 6px; font-size:18px}
+    .project p{margin:0; color: var(--muted); font-size:14px}
+    .footer{margin-top:56px; color:#94a3b8; font-size:13px}
+    .kbd{background:#e2e8f0; border-radius:6px; padding:2px 6px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size:12px}
+      .publist{list-style:none; padding-left:0; display:grid; gap:12px; margin-top:12px}
+    .publist li{background:var(--card); border:1px solid #e2e8f0; border-radius:14px; padding:14px}
+    .pub-title{font-weight:600}
+    .pub-title .cn{font-weight:500; color:#64748b}
+    .pub-meta{font-size:13px; color:#64748b; margin-top:4px}
   </style>
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        <img class="avatar" src="./assets/avatar.png" alt="Chunlin Bian" />
-        <div>
-          <div class="title">Chunlin Bian</div>
-          <div class="subtitle">PhD Candidate · Seismic Resilience & Urban Renewal</div>
-        </div>
-      </div>
-      <nav class="nav-links" id="top-nav">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#publications">Publications</a>
-        <a href="#awards">Awards</a>
-        <a href="#resume">Resume</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
+  <header class="container" aria-label="Site header">
+    <!-- (Optional top nav could go here) -->
   </header>
 
   <main class="container">
-    <!-- Hero -->
-    <section class="hero" id="about">
+    <section class="hero" aria-label="Hero">
       <div>
-        <h1>Hi, I'm <span style="color:var(--brand)">Chunlin Bian</span> 👋</h1>
-        <p>I am a <strong>PhD candidate in Architecture at Tongji University</strong>, supervised by <strong>Prof. Menggang</strong>. My research focuses on <strong>seismic resilience</strong> and <strong>urban renewal</strong>, exploring how digital tools, planning, and architectural design can enhance resilience in the built environment.</p>
-        <div>
-          <span class="badge">🎓 PhD Candidate — Tongji University</span>
-          <span class="badge">👨‍🏫 Supervisor: Prof. Menggang</span>
-          <span class="badge">🏫 Lecturer — Xichang University</span>
+        <h1>Hi, I'm <span class="accent">Chunlin Bian</span> 👋</h1>
+        <p class="lead">
+          I’m a PhD candidate in Architecture at Tongji University. My work explores
+          <strong>AI for the built environment</strong>—how <strong>foundation models</strong>,
+          <strong>Earth‑observation</strong>, and <strong>digital twins</strong> can enhance
+          <strong>seismic resilience</strong> and <strong>urban renewal</strong>. I build
+          <strong>data‑to‑decision pipelines</strong> combining satellite/IoT sensing,
+          <strong>vision‑language models</strong>, <strong>agent‑based simulation</strong>, and
+          <strong>AIGC</strong> to support planning, design, and emergency management.
+        </p>
+
+        <div class="chips" role="list">
+          <span class="chip" role="listitem">🎓 PhD Candidate — Tongji University</span>
+          <span class="chip" role="listitem">🛰️ EO & Digital Twin for Cities</span>
+          <span class="chip" role="listitem">🧠 VLM / AIGC for Urban Design</span>
+          <span class="chip" role="listitem">🧑‍🤝‍🧑 Multi‑agent Simulation</span>
+          <span class="chip" role="listitem">🏛️ Urban Renewal & Heritage</span>
         </div>
-        <div style="margin-top:18px">
-          <a class="btn" href="#projects">See Projects</a>
-          <a class="btn" href="./assets/Chunin Bian-CV_Arch325.pdf" target="_blank">Download CV</a>
+
+        <div class="btns" role="group" aria-label="Primary actions">
+          <a class="btn primary" href="#projects">See Projects</a>
+          <!-- Update the filename below to your actual PDF if different -->
+          <a class="btn ghost" href="Chunlin_Bian_Academic_CV.pdf" download>Download CV</a>
         </div>
       </div>
-      <div class="panel">
-        <img src="./assets/cover.png" alt="cover" style="width:100%;border-radius:12px;" />
-        <div class="kpis">
-          <div class="kpi"><strong>15+</strong><span>years teaching & research</span></div>
-          <div class="kpi"><strong>10+</strong><span>grants & projects</span></div>
-          <div class="kpi"><strong>20+</strong><span>papers & books</span></div>
+
+      <aside>
+        <div class="card" aria-label="Stats">
+          <div class="stat"><div class="n">15+</div><div class="k">years teaching & research</div></div>
+          <div class="stat"><div class="n">10+</div><div class="k">grants & projects</div></div>
+          <div class="stat"><div class="n">20+</div><div class="k">papers & books</div></div>
         </div>
-      </div>
+      </aside>
     </section>
 
-    <!-- Projects -->
-    <section id="projects">
+    <section id="projects" class="section" aria-label="Selected projects">
       <h2>Selected Projects</h2>
-      <div class="card">
-        🌍 <strong>InSAR Time-Series for Ground Deformation</strong><br>
-        Sentinel-1A based monitoring of subsidence and uplift in Xichang, supporting early-warning and resilient city planning.
-      </div>
-      <div class="card" style="margin-top:12px">
-        🏛️ <strong>Man–Heritage–Settlements</strong><br>
-        Participatory conservation framework for Yi minority traditional settlements and vernacular buildings in Southwest China.
-      </div>
-      <div class="card" style="margin-top:12px">
-        🌱 <strong>Ecological Security Pattern of Xichang</strong><br>
-        City-scale ecological networks and multi-scale landscape planning strategies toward sustainable urban development.
+      <p>
+        I prototype <strong>AI‑augmented workflows</strong> from <em>sensing → understanding → generation → decision</em>,
+        validated on real sites (e.g., Xichang Ancient City) for monitoring, iterative design,
+        and resilience planning.
+      </p>
+
+      <div class="projects">
+        <article class="project">
+          <h3>InSAR Time‑Series for Ground Deformation</h3>
+          <p>Sentinel‑1A based monitoring of subsidence/uplift for early‑warning and resilient planning in Xichang.</p>
+        </article>
+        <article class="project">
+          <h3>VLM + AIGC for Urban Design</h3>
+          <p>Using vision‑language models to parse multi‑source data and drive generative design alternatives in heritage contexts.</p>
+        </article>
+        <article class="project">
+          <h3>Digital Twin & Agent‑based Evacuation</h3>
+          <p>City‑scale twin with multi‑agent simulation for evacuation and emergency response under earthquake scenarios.</p>
+        </article>
+        <article class="project">
+          <h3>O2O Cultural IP & Metaverse Ops</h3>
+          <p>Data‑to‑experience pipeline linking virtual experiences to on‑site economy for heritage‑led urban renewal.</p>
+        </article>
       </div>
     </section>
 
-    <!-- Publications + Awards -->
-    <section id="publications">
-      <h2>Publications & Awards</h2>
-      <div class="two-col">
-        <!-- Publications -->
-        <div class="card">
-          <h3>Publications</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>Title</th>
-                <th>Authors</th>
-                <th>Journal</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Spatial Reproduction of Future Communities: Case of Jiaxing Hongqiao</td>
-                <td>Bian Chunlin, Meng Gang, Zhou Xiangxin</td>
-                <td>Housing Science & Technology</td>
-                <td>Published</td>
-              </tr>
-              <tr>
-                <td>Future Community Spatial Reproduction: Case of Haiyan Haixing</td>
-                <td>Bian Chunlin, Meng Gang, Zhou Xiangxin</td>
-                <td>Housing Science & Technology</td>
-                <td>Accepted, Nov 2025</td>
-              </tr>
-              <tr>
-                <td>Assembled Countryside & Collage City: Practice in Deqing</td>
-                <td>Bian Chunlin, Meng Gang, Zhou Xiangxin</td>
-                <td>Housing Science & Technology</td>
-                <td>Accepted, Dec 2025</td>
-              </tr>
-              <tr>
-                <td>Resilient Healing Landscape Design in Southwest China</td>
-                <td>Bian Chunlin, Meng Gang, Guo Ning</td>
-                <td>Architecture & Culture</td>
-                <td>Accepted, Nov 2025</td>
-              </tr>
-              <tr>
-                <td>Digital Healing Power and the Medical Metaverse</td>
-                <td>Bian Chunlin, Meng Gang</td>
-                <td>Building and Environment</td>
-                <td>Under Review</td>
-              </tr>
-              <tr>
-                <td>AIGC-driven Digital Cultural Heritage: Jianchang Ancient City</td>
-                <td>Bian Chunlin, Meng Gang</td>
-                <td>Architectural Education in China</td>
-                <td>Under Review</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <!-- Awards -->
-        <div class="card">
-          <h3>Awards</h3>
-          <ul style="margin:0 0 0 18px">
-            <li>
-              <strong>Young Geographers Award – Best Paper</strong><br>
-              Resilience and Urban Regeneration Policies: Empirical Research from Top-Down and Bottom-Up Strategies — Case Study of Xichang, Liangshan, Sichuan, China<br>
-              <em>15th Korea–China–Japan Joint Conference on Geography, Oct 22, 2023</em>
-            </li>
-          </ul>
-        </div>
-      </div>
+    <section class="section" aria-label="Chinese summary">
+      <h2>研究摘要（中文）</h2>
+      <p>
+        我关注<strong>面向人居环境的 AI 应用</strong>：利用<strong>基础模型、遥感/传感数据与数字孪生</strong>
+        提升<strong>抗震韧性</strong>与<strong>城市更新</strong>。构建从<strong>数据采集—语义理解—生成式设计—决策支持</strong>
+        的闭环流程，融合<strong>视觉语言模型（VLM）</strong>、<strong>多智能体仿真</strong>与<strong>AIGC</strong>，服务规划、设计与应急管理。
+      </p>
     </section>
 
-    <!-- Resume -->
-    <section id="resume">
-      <h2>Experience</h2>
-      <div class="card">
-        <div class="timeline">
-          <div class="tl-item"><small>2016 – Present</small> Lecturer — Xichang University</div>
-          <div class="tl-item"><small>2015 – 2016</small> Director of Urban Design — Urban Management Bureau, Panzhihua</div>
-          <div class="tl-item"><small>2013 – 2015</small> Planner — Zhejiang University Planning Institute</div>
-        </div>
-      </div>
+    <section id="publications" class="section" aria-label="Selected publications">
+      <h2>Selected Publications</h2>
+      <p class="text-slate-700">Bilingual format recommended: <strong>English title</strong> <span style="color:#64748b">[Chinese title]</span>. Keep official English journal names where available; include DOI if you have it.</p>
 
-      <h2 style="margin-top:24px">Education</h2>
-      <div class="card">
-        <div class="timeline">
-          <div class="tl-item"><small>Now</small> PhD Candidate, Architecture — Tongji University (Supervisor: Prof. Menggang)</div>
-          <div class="tl-item"><small>2018</small> Visiting Scholar — Massey University, NZ</div>
-          <div class="tl-item"><small>2008 – 2010</small> M.Sc., Landscape Architecture — Peking University</div>
-          <div class="tl-item"><small>2003 – 2007</small> Bachelor, Landscape Architecture — Sichuan Agricultural University</div>
-        </div>
-      </div>
+      <ul class="publist">
+        <li>
+          <div class="pub-title">Research on Spatial Reproduction in Future Communities Amid Stock Renewal — A Case Study of Hongqiao Future Community Project in Xincheng Town</div>
+          <div class="pub-meta"><em>— Journal/Conference, year, volume(issue): pages. DOI: (if available)</em></div>
+        </li>
+              <li>
+          <div class="pub-title">A Study on the Construction of Smart, Therapeutic, and Resilient Landscapes in Southwest China</div>
+          <div class="pub-meta"><em>— Architecture and Culture, year, volume(issue): pages. DOI: (if available)</em></em></div>
+        </li>
+              <li>
+          <div class="pub-title">Assembled Countryside and Collage City — A Case Study of Landscape Planning in the Central County Demonstration Zone of Deqing, Zhejiang Province</div>
+          <div class="pub-meta"><em>— Journal/Conference, year, volume(issue): pages. DOI: (if available)</em></div>
+        </li>
+              <li>
+          <div class="pub-title">Renewing the Quality of Future Communities through the Lens of Scene Theory: A Case Study of the Haixing Future Community, Zhejiang Province</div>
+          <div class="pub-meta"><em>— Housing Science, year, volume(issue): pages. DOI: (if available)</em></em></div>
+        </li>
+      </ul>
     </section>
 
-    <!-- Contact -->
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="card">
-        📞 Phone: +86 18215758251<br>
-        📧 Email: <a href="mailto:chunlinbian@outlook.com">chunlinbian@outlook.com</a><br>
-        🌐 GitHub: <a href="https://github.com/bcl200n" target="_blank">bcl200n</a>
-      </div>
-    </section>
-
-    <footer class="container">
-      <div style="display:flex;justify-content:space-between;align-items:center">
-        <div>© <span id="year"></span> Chunlin Bian. All rights reserved.</div>
-      </div>
+    <footer class="footer">
+      <p>© <span id="y"></span> Chunlin Bian · Built with plain HTML/CSS. Press <span class="kbd">D</span> to download CV.</p>
     </footer>
   </main>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    // year
+    document.getElementById('y').textContent = new Date().getFullYear();
+    // quick keyboard shortcut to download CV
+    window.addEventListener('keydown', (e)=>{
+      if (e.key.toLowerCase() === 'd') {
+        window.location.href = 'Chunlin_Bian_Academic_CV.pdf';
+      }
+    });
   </script>
 </body>
 </html>
