@@ -41,6 +41,8 @@
   .chip{background:var(--chip);border:1px solid var(--line);border-radius:999px;padding:5px 9px;font-size:13px;color:#314056}
   .buttons{display:grid;gap:8px;margin-top:14px}
   .btn{display:flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:7px;padding:9px 12px;background:#fff;font-weight:700}
+  .inline-actions{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+  .pill-link{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;padding:6px 10px;background:#fff;font-size:13px;font-weight:700}
   .main{display:grid;gap:16px}
   .section{padding:18px}
   .item{padding:10px 0;border-bottom:1px solid var(--line)}
@@ -144,7 +146,7 @@
     </section>
 
     <section class="section" id="publications">
-      <h2>Selected Publications</h2>
+      <h2>Publications and Writings</h2>
       <ul class="pubs">
         <li>Bian C, Meng G, Yang L, et al. Modeling seismic resilience and hospital evacuation: A comparative analysis of multi-agent reinforcement learning and classical evacuation models. <i>Buildings</i>, 2026, 16(8): 1538.</li>
         <li>边春霖, 孟刚, 阳雷, 等. AIGC驱动下古城数字文旅与孪生应用研究--以建昌古城更新项目（二期）为例. <i>住宅科技</i>, 2026, 46(03): 15-28.</li>
@@ -157,6 +159,7 @@
         <li>边春霖. 此时、彼处--超越时空的借景. 中国风景园林学会2010年会论文集(上册), 2010: 24-31.</li>
         <li>边春霖. 柏林的绿色城市主义及启示. 陈植造园思想国际研讨会暨园林规划设计理论与实践博士生论坛论文集, 2009: 176-180.</li>
         <li>杜宏惠, 王新, 岳竹, 冉鑫, 边春霖. 深圳公交中途站雨棚缺失原因调查. 对土地与社会的观察与思考：“景观社会学”教学案例. 北京: 高等教育出版社, 2011: 141-162.</li>
+        <li>郭宁. 基于InSAR技术的凉山州中心城市地表形变监测研究与应用. 四川省, 西昌学院, 2021-11-15.</li>
         <li>边春霖, 汤敏. <i>生态城市主义</i>. 武汉: 华中科技大学出版社, 2015.</li>
       </ul>
     </section>
@@ -166,6 +169,10 @@
       <div class="item">
         <h3><a href="https://www.bilibili.com/opus/1180695524817240072" target="_blank" rel="noreferrer">Guban AI / StockMate AI</a></h3>
         <div class="meta">Independent Full-Stack Developer | 2024 - Present</div>
+        <div class="inline-actions">
+          <a class="pill-link" href="https://www.bilibili.com/opus/1180695524817240072" target="_blank" rel="noreferrer">Demo / 体验入口</a>
+          <span class="pill-link">AI Hackathon Tour University League 2026 semifinalist</span>
+        </div>
         <ul>
           <li>Designed and developed an AI investment research platform for senior investors, covering stock screening, market interpretation, financial Q&A, and research report generation.</li>
           <li>Built an AI Investment Jury multi-agent workflow with macro, industry, financial-report, technical, sentiment, risk, and strategy agents.</li>
@@ -196,13 +203,14 @@
 
     <section class="section" id="patents">
       <h2>Patents and Software Copyrights</h2>
+      <p class="muted">2 granted utility-model patents and 4 registered software copyrights related to radar corner reflectors, InSAR monitoring, 3D terrain reconstruction, and remote-sensing interpretation.</p>
       <ul>
-        <li>Miniaturized bidirectional flat-plate radar corner reflector with millimeter-level precision, Patent No. ZL 2021 2 0633917.0.</li>
-        <li>Swing-arm angle bracket for radar corner reflectors, Patent No. ZL 2021 2 3275569.9.</li>
-        <li>Terrain 3D reconstruction software based on interferometric phase, Reg. No. 2021SR0882358.</li>
-        <li>DInSAR surface-deformation error-source and decorrelation analysis software, Reg. No. 2021SR08861.</li>
-        <li>Time-series InSAR surface-deformation monitoring system, Reg. No. 2021SR0882870.</li>
-        <li>High-resolution satellite-image land-use remote-sensing interpretation software, Reg. No. 2021SR0882871.</li>
+        <li><b>Utility-model patent:</b> 一种小型化的毫米级精度双向平板雷达角反射器 / Miniaturized bidirectional flat-plate radar corner reflector with millimeter-level precision, Patent No. ZL 2021 2 0633917.0.</li>
+        <li><b>Utility-model patent:</b> 雷达角反射器摇臂式角支架 / Swing-arm angle bracket for radar corner reflectors, Patent No. ZL 2021 2 3275569.9.</li>
+        <li><b>Software copyright:</b> 基于干涉相位的地形三维重建软件V1.0 / Terrain 3D reconstruction software based on interferometric phase, Reg. No. 2021SR0882358.</li>
+        <li><b>Software copyright:</b> DInSAR地表形变监测误差来源及干涉失相关分析软件V1.0 / DInSAR surface-deformation error-source and decorrelation analysis software, Reg. No. 2021SR08861.</li>
+        <li><b>Software copyright:</b> 基于时序InSAR技术的地表形变监测系统V1.0 / Time-series InSAR surface-deformation monitoring system, Reg. No. 2021SR0882870.</li>
+        <li><b>Software copyright:</b> 基于高分辨率卫星影像土地利用遥感解译软件V1.0 / High-resolution satellite-image land-use remote-sensing interpretation software, Reg. No. 2021SR0882871.</li>
       </ul>
     </section>
 
