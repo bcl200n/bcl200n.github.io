@@ -41,6 +41,9 @@
     line-height:1.65;
   }
   a{color:var(--brand);text-decoration:none}
+  .project-video{margin:18px 0 0}
+  .project-video video{display:block;width:100%;max-width:320px;aspect-ratio:9/16;height:auto;margin:0 auto;background:#111;border-radius:8px;object-fit:contain}
+  .project-video figcaption{margin-top:10px;font-size:14px;color:var(--muted)}
   a:hover{text-decoration:underline}
   header{
     position:sticky;
@@ -524,6 +527,17 @@
         <p data-lang="en">Contributed to a child-focused posture-reminder and emotional-care lamp at the Ningbo edition of the linked Hangzhou–Ningbo–Wenzhou hackathon. I handled visual/UI design and code optimization, supporting interaction design across camera sensing, FSM control, lighting, and offline voice feedback.</p>
         <p class="muted" data-lang="zh">项目处于原型开发阶段；端侧模型部署、硬件联调和实机性能仍待验证。具身智能是后续探索方向。</p>
         <p class="muted" data-lang="en">Prototype-stage project; on-device model deployment, hardware integration, and device performance remain to be validated. Embodied AI is a direction for further exploration.</p>
+        <figure class="project-video" id="randeng-video">
+          <video controls playsinline preload="none" poster="assets/videos/randeng-genie-poster.jpg" aria-describedby="randeng-video-caption">
+            <source src="assets/videos/randeng-genie-intercity-hack-ningbo-20261101.mp4" type="video/mp4">
+            <a href="assets/videos/randeng-genie-intercity-hack-ningbo-20261101.mp4">观看视频 / Watch video</a>
+          </video>
+          <figcaption id="randeng-video-caption">
+            <span data-lang="zh">燃灯精灵作品视频｜INTERCITY HACK 杭甬温三城联动黑客松·宁波场，2026.10.30—11.01。</span>
+            <span data-lang="en">Randeng Genie project video | INTERCITY HACK, Ningbo edition of the linked Hangzhou–Ningbo–Wenzhou hackathon, 30 Oct–1 Nov 2026.</span>
+            <a href="assets/videos/randeng-genie-intercity-hack-ningbo-20261101.mp4" target="_blank" rel="noreferrer"><span data-lang="zh">单独打开视频</span><span data-lang="en">Open video</span></a>
+          </figcaption>
+        </figure>
       </article>
     </div>
   </section>
